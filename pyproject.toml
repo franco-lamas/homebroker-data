@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "hbd"
+name = "homebroker-data"
 version = "0.1.0"
 description = "Modern Python 3.12 client for the BYMA Home Broker platform"
 readme = "README.md"
@@ -11,7 +11,6 @@ requires-python = ">=3.12"
 license = "Apache-2.0"
 authors = [
     { name = "Franco Lamas" },
-    { name = "Marcelo Colom" },
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -37,7 +36,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/hbd"]
+packages = ["src/homebroker_data"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -48,13 +47,13 @@ addopts = [
     "-v",
     "--strict-markers",
     "--strict-config",
-    "--cov=src/hbd",
+    "--cov=src/homebroker_data",
     "--cov-report=term-missing",
     "--cov-report=html",
 ]
 
 [tool.coverage.run]
-source = ["src/hbd"]
+source = ["src/homebroker_data"]
 branch = true
 
 [tool.coverage.report]
