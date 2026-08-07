@@ -38,8 +38,9 @@ legacy/
 .mypy_cache/
 .ruff_cache/
 
-# OS
-.DS_Store
-Thumbs.db
+# Environment
+.env
+.env.*
+!.env.example
 # Lock files (local generation)
 requirements*.txt
