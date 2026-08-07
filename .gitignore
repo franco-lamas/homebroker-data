@@ -29,7 +29,9 @@ dist/
 *.swo
 *~
 
-# Legacy reference code (do NOT version — GPL contamination risk)
+# SDD local artifacts (NOT for public repo)
+openspec/
+.atl/
 legacy/
 
 # Coverage / CI
