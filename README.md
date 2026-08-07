@@ -30,13 +30,13 @@ pip install homebroker-data
 ```python
 from homebroker_data import HomeBroker
 
-broker = HomeBroker(broker=0, dni="12345678", user="user", password="pass")
-broker.auth.login()
+hb = HomeBroker(broker=0, dni="12345678", user="user", password="pass")
+hb.auth.login()
 
-data = broker.online.get_securities("bluechips", "spot")
-history = broker.history.get_daily_history("GGAL", "2024-01-01", "2024-01-31")
+data = hb.online.get_securities("bluechips", "spot")
+history = hb.history.get_daily_history("GGAL", "2024-01-01", "2024-01-31")
 
-broker.auth.logout()
+hb.auth.logout()
 ```
 
 ## License
