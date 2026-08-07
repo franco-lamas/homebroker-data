@@ -1,0 +1,58 @@
+# SDD Configuration — HBD (HomeBroker Data)
+# Generated: 2026-06-02
+# Mode: hybrid (openspec files + Engram)
+
+project:
+  name: HBD
+  display_name: HomeBroker Data
+  description: Modern Python client for the BYMA Home Broker platform (Argentine stock brokers)
+  language: Python 3.10+
+  stack:
+    - python: ">=3.10"
+    - packaging: pyproject.toml (hatchling / setuptools — TBD)
+  legacy:
+    - v1: legacy/pyhomebroker/ (Python 3.6-3.8, Apache 2.0)
+    - v2: legacy/SHD/ (Python 3.8-3.12, GPL V3)
+
+persistence:
+  mode: hybrid
+
+strict_tdd: true
+strict_tdd_reason: >
+  pytest 8.4.2 available system-wide. Enabling strict TDD once
+  pyproject.toml is configured with pytest as a dev dependency and
+  [tool.pytest.ini_options] is set.
+
+testing:
+  runner:
+    available: true
+    command: pytest
+    framework: pytest 8.4.2
+    configured_in_project: false
+  layers:
+    unit: false
+    integration: false
+    e2e: false
+  coverage:
+    available: false
+    command: null
+  quality:
+    linter:
+      available: false
+      command: null
+    type_checker:
+      available: false
+      command: null
+    formatter:
+      available: false
+      command: null
+
+phases:
+  explore: {}
+  propose: {}
+  spec: {}
+  design: {}
+  tasks: {}
+  apply: {}
+  verify: {}
+  archive: {}
