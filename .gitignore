@@ -41,3 +41,5 @@ legacy/
 # OS
 .DS_Store
 Thumbs.db
+# Lock files (local generation)
+requirements*.txt
