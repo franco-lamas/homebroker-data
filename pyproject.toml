@@ -33,6 +33,7 @@ dev = [
     "pytest-httpx>=0.30",
     "ruff>=0.4",
     "mypy>=1.10",
+    "pandas-stubs>=2.2",
 ]
 
 [tool.hatch.build.targets.wheel]
