@@ -333,3 +333,21 @@ class TestNormalizeColumns:
         assert "symbol" in result.columns
         assert "UnknownCol" in result.columns  # unmapped columns pass through
 
+    def test_order_book_columns_mapped(self):
+        """Order book raw keys → English names (Pos→position, BuyPrice→bid, etc.)."""
+        df = pd.DataFrame([{
+            "Pos": 1,
+            "BuyPrice": "250,00",
+            "BuyQuantity": "100",
+            "SellPrice": "251,00",
+            "SellQuantity": "150",
+            "NumberOfOrders": 5,
+        }])
+        result = normalize_columns(df)
+        assert "position" in result.columns
+        assert "bid" in result.columns
+        assert "bid_size" in result.columns
+        assert "ask" in result.columns
+        assert "ask_size" in result.columns
+        assert "offers_count" in result.columns
+
